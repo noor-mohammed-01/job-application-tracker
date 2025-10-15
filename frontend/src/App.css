@@ -1,0 +1,211 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color:rgb(233, 210, 8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 🌆 Top image (banner) */
+.top-image {
+  width: 95%;
+  max-width: 1300px;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto; /* center it */
+  border-radius: 15px; /* rounded corners */
+  border: 4px solid #ffffff; /* white border */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25); /* soft shadow */
+  filter: brightness(0.95);
+}
+
+
+/* 🧭 Navbar below image */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 25px;
+  background: #ffffff;
+  color: #1f2937;
+  border-radius: 12px; /* slight rounding to match image */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* subtle shadow */
+  width: 90%;
+  max-width: 800px;
+  margin: -50px auto 40px; /* floats neatly over image */
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+
+.job-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.navbar-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: rgb(14, 3, 116);
+  letter-spacing: 0.5px;
+}
+
+/* Home container */
+.home-container {
+  padding: 0 15px 50px 15px;
+  margin-top: 10px;
+}
+
+/* No jobs + add button */
+.no-jobs {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 10px;
+}
+
+.add-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #6366f1;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: bounceGlow 1.5s infinite;
+}
+
+@keyframes bounceGlow {
+  0%, 100% { transform: translateY(0); box-shadow: 0 0 10px #6366f1; }
+  50% { transform: translateY(-10px); box-shadow: 0 0 25px #4f46e5; }
+}
+
+.add-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #4f46e5;
+}
+
+/* Job cards container */
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, auto)); /* changed max width to auto */
+  justify-content: center; /* center single card */
+  gap: 15px;
+  padding: 0 15px 30px 15px;
+}
+
+
+.job-card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Job form */
+.job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+input, select, textarea {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn, .edit-btn, .delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-btn, .edit-btn {
+  background-color: #6366f1;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.submit-btn:hover, .edit-btn:hover, .delete-btn:hover {
+  opacity: 0.9;
+}
+
+/* Slide down animation */
+.slide-down {
+  animation: slideDown 0.4s ease forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Status badges */
+.status-badge {
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.status-applied { background-color: #6366f1; }
+.status-interview { background-color: #f59e0b; }
+.status-offer { background-color: #10b981; }
+.status-rejected { background-color: #ef4444; }
+
+/* Floating add button */
+.floating-add-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #6366f1;
+  color: white;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: bounceGlow 1.5s infinite;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: none;
+}
+
+.floating-add-btn:hover {
+  transform: scale(1.1);
+}
